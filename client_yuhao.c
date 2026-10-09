@@ -141,7 +141,7 @@ int main(int argc, char *argv[]) {
     		printf("Introdueix la velocitat (km/h): ");
     		scanf("%lf", &velocidad);
 
-    		snprintf(cadena, BUFFER_SIZE, "FLIGHT_TIME %.2f %.2f", distancia, velocidad);
+    		snprintf(cadena, BUFFER_SIZE, "1_FLIGHT_TIME %.2f %.2f", distancia, velocidad);
 
     		if (send(sock, cadena, strlen(cadena), 0) < 0) {
         		perror("Error en enviar");
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
 			printf("Introdueix el consum (L/h): ");
     		scanf("%lf", &consum);
 
-			snprintf(cadena, BUFFER_SIZE, "FUEL %.2f %.2f", temps, consum);
+			snprintf(cadena, BUFFER_SIZE, "2_FUEL %.2f %.2f", temps, consum);
 
 			if (send(sock, cadena, strlen(cadena), 0) < 0) {
         		perror("Error en enviar");
@@ -197,7 +197,7 @@ int main(int argc, char *argv[]) {
 			printf("Introdueix el preu del combustible (€/L): ");
 			scanf("%lf", &preu);
 
-			snprintf(cadena, BUFFER_SIZE, "COST %.2f %.2f", combustible, preu);
+			snprintf(cadena, BUFFER_SIZE, "3_COST %.2f %.2f", combustible, preu);
 
 			if (send(sock, cadena, strlen(cadena), 0) < 0) {
         		perror("Error en enviar");
@@ -226,7 +226,7 @@ int main(int argc, char *argv[]) {
 			printf("Introdueix la velocitat (km/h): ");
 			scanf("%lf", &velocitat);
 
-			snprintf(cadena, BUFFER_SIZE, "RANGE %.2f %.2f %.2f", combustible, consum, velocitat);
+			snprintf(cadena, BUFFER_SIZE, "4_RANGE %.2f %.2f %.2f", combustible, consum, velocitat);
 
 			if (send(sock, cadena, strlen(cadena), 0) < 0) {
 				perror("Error en enviar");
