@@ -191,12 +191,12 @@ int main(int argc, char *argv[]) {
 		case 4:
 		{
 			// Implementar Opció 4
-			double combustible,preu;
+			float combustible,preu;
 			printf("Introdueix la quantitat de combustible (L): ");
-			scanf("%lf", &combustible);
+			scanf("%f", &combustible);
 			printf("Introdueix el preu del combustible (€/L): ");
-			scanf("%lf", &preu);
-
+			scanf("%f", &preu);
+			while (getchar() != '\n');
 			snprintf(cadena, BUFFER_SIZE, "3_COST %.2f %.2f", combustible, preu);
 
 			if (send(sock, cadena, strlen(cadena), 0) < 0) {
@@ -218,14 +218,14 @@ int main(int argc, char *argv[]) {
 
 		 case 5:
         {
-            double combustible, consum, velocitat;
+            float combustible, consum, velocitat;
 			printf("Introdueix la quantitat de combustible (L): ");
-			scanf("%lf", &combustible);
+			scanf("%f", &combustible);
 			printf("Introdueix el consum (L/h): ");
-			scanf("%lf", &consum);
+			scanf("%f", &consum);
 			printf("Introdueix la velocitat (km/h): ");
-			scanf("%lf", &velocitat);
-
+			scanf("%f", &velocitat);
+			while (getchar() != '\n');
 			snprintf(cadena, BUFFER_SIZE, "4_RANGE %.2f %.2f %.2f", combustible, consum, velocitat);
 
 			if (send(sock, cadena, strlen(cadena), 0) < 0) {

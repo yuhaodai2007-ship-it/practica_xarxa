@@ -150,9 +150,9 @@ int main(int argc, char *argv[]) {
 			// OPCIÓ 4: COST DEL COMBUSTIBLE
 			else if (strncmp(buffer, "3_COST", 6) == 0) {
 					
-					double cost, combustible, preu;
+					float cost,combustible, preu;
 					
-					if (sscanf(buffer, "3_COST %lf %lf ", &preu, &combustible) == 2) {
+					if (sscanf(buffer, "3_COST %f %f ", &preu, &combustible) == 2) {
 						if (combustible >= 0 && preu >= 0) {
 							cost = combustible * preu;
 							snprintf(send_buffer, BUFFER_SIZE,"%.2f €\n", cost);
@@ -170,9 +170,9 @@ int main(int argc, char *argv[]) {
 			// OPCIÓ 5: RANGE
 			else if (strncmp(buffer, "4_RANGE", 7)== 0){
 
-				double combustible, consum, velocitat, temps, distancia;
+				float combustible, consum, velocitat, temps, distancia;
 
-				if (sscanf(buffer, "4_RANGE %lf %lf %lf ", &combustible, &consum, &velocitat) == 3) {
+				if (sscanf(buffer, "4_RANGE %f %f %f ", &combustible, &consum, &velocitat) == 3) {
 					
 					if (combustible >= 0 && consum >= 0 && velocitat >= 0){
 
